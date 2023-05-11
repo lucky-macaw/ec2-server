@@ -47,10 +47,10 @@ It outputs the The DNS name of the load balancer, which you can hit to confirm s
 
  A LOT :)
 
- - Regiser the domain
+ - Register the domain
  - Create a SSL certificate 
  - update listner rule to redirect traffic to port 443
- - create cloudfront distribution
+ - create cloudfront distribution 
  - create route53 record to direct traffic to ALB via cloudfront distribution
  - assiciate cloudfront deistribtion with WAF to protect against common atacks
  - enable ALB accesslogs 
