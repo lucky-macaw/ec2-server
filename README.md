@@ -18,15 +18,16 @@ This terraform code
 - provisions required amount of servers in private subnets by using launch template and
 - places them in autoscaling group behind an application load balancer. 
 - attaches instance profile to servers that contains the AWS managed policies AmazonSSMManagedInstanceCore and AmazonS3ReadOnlyAccess
-- refer [variables.tf] (variables.tf) files for required and optional parameters
+- refer [variables.tf](variables.tf) files for required and optional parameters
 - This code has been tested using the config file for [testing](config/testing/testing.tfvars) stage 
 
 ![Running server](images/server-running.png)
 
-## prerequisites
+
+## Prerequisites
 - A s3 bucket in Sydney region with index.html file. Update [user_data.sh] (scripts/user_data.sh)
 - A s3 bucket and dynamoDB table store and manage terraform state. Update [<state>-backend.tfvars](config/testing/testing-backend.tfvars)
-- - SSM agent pre-installed on EC2
+- SSM agent pre-installed on EC2
 - Install terraform (v1.4.5 and above)
 
 ## Usage
@@ -39,10 +40,10 @@ terraform apply -var-file=config/${stage}/${stage}.tfvars -auto-approve
 It outputs the The DNS name of the load balancer, which you can hit to confirm server is serving the html page. 
 
 ## How to access server
-- access via console : Select the ec2 instance and press connect in session manage tab
-- or follow these [instructions] (https://github.com/qoomon/aws-ssm-ec2-proxy-command/tree/master) to open an SSH connection to the ec2 instances via AWS SSM without the need to open any ssh port in you security groups.
+- access via AWS console : Select the ec2 instance and press connect in session manager tab
+- or follow these [instructions](https://github.com/qoomon/aws-ssm-ec2-proxy-command/tree/master) to open an SSH connection to the ec2 instances via AWS SSM without the need to open any ssh port in you security groups.
 
-## What is remaining to make it productio ready
+## What is remaining to make it production ready
 
  A LOT :)
 
