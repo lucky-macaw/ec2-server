@@ -25,7 +25,7 @@ This terraform code
 
 
 ## Prerequisites
-- A s3 bucket in Sydney region with index.html file. Update [user_data.sh] (scripts/user_data.sh)
+- A s3 bucket in Sydney region with index.html file. Update [user_data.sh](scripts/user_data.sh)
 - A s3 bucket and dynamoDB table store and manage terraform state. Update [<state>-backend.tfvars](config/testing/testing-backend.tfvars)
 - SSM agent pre-installed on EC2
 - Install terraform (v1.4.5 and above)
